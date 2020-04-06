@@ -1,17 +1,21 @@
+<div class="home-banner">
+  <h1>Meet our team</h1>
+
 <div class="container">
-  <h2>Meet our team</h2>
+  <div class="row justify-content-center">
+    <form action="/contact" method="get">
+      <input type="text" name="member" value="<%= params[:member] %>"
+      placeholder="Search">
+      <input type="submit">
+    </form>
 
-  <form action="/contact" method="get">
-    <input type="text" name="member" value="<%= params[:member] %>"
-    placeholder="Who are you looking for?">
-    <input type="submit">
-  </form>
-
-  <ol>
-    <% @members.each do |member| %>
-      <li><%= member.capitalize %></li>
-    <% end %>
-  </ol>
-<%= link_to "Home", root_path %>
+      <ol>
+        <% @members.each do |member| %>
+          <li><%= member.capitalize %></li>
+        <% end %>
+    </ol>
+  </div>
+    <%= link_to "Home", root_path, class: "btn btn-outline-primary" %>
+</div>
 </div>
 

@@ -7,11 +7,11 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
 import 'bootstrap';
+import { initUpdateNavbarOnScroll } from '../components/navbar';
 
-
-$('#myModal').on('shown.bs.modal', function () {
-  $('#myInput').trigger('focus')
-})
+document.addEventListener('turbolinks:load', () => {
+  initUpdateNavbarOnScroll();
+});
 
 console.log("Hello from app/javascript/packs/application.js!");
 
